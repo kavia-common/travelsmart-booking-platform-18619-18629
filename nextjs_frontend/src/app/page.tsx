@@ -1,88 +1,50 @@
-import Link from "next/link";
-
-export default function Home() {
+ /**
+  * PUBLIC_INTERFACE
+  * HomePage renders the landing hero to verify Tailwind and asset loading.
+  * Returns: A styled landing section with brand colors and sample imagery.
+  */
+export default function HomePage() {
   return (
-    <div>
-      <header className="hero">
-        <div className="hero-accent" />
-        <div className="ocean-container">
-          <div className="page-grid" style={{ alignItems: 'center' }}>
-            <div>
-              <nav className="kicker" aria-label="Breadcrumb">Home / Dashboard</nav>
-              <h1>
-                Book smarter with AI.
-                <br />Travel with confidence.
+    <main className="min-h-[70vh] bg-gradient-to-b from-blue-50 to-gray-50">
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <div className="rounded-2xl bg-white shadow-soft p-10">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-1">
+              <span className="inline-flex items-center rounded-full bg-blue-100 text-blue-700 px-3 py-1 text-sm font-medium">
+                Ocean Professional Theme
+              </span>
+              <h1 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900">
+                Plan smarter. Book faster.
               </h1>
-              <p className="lead">
-                Search flights and hotels, compare dynamic pricing, and manage bookings—all with an AI copilot at your side.
+              <p className="mt-4 text-gray-600">
+                AI-powered flight and hotel bookings with real-time pricing and personalized recommendations.
               </p>
-              <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-                <Link href="/pricing" className="btn btn-outline">Compare Analytics</Link>
-                <Link href="/dashboard" className="btn btn-outline">SmartAssist</Link>
+              <div className="mt-6 flex gap-3">
+                <a
+                  href="/search/flights"
+                  className="inline-flex items-center rounded-lg bg-primary px-5 py-3 text-white font-semibold hover:opacity-95 transition"
+                >
+                  Search Flights
+                </a>
+                <a
+                  href="/search/hotels"
+                  className="inline-flex items-center rounded-lg border border-gray-200 bg-white px-5 py-3 font-semibold text-gray-800 hover:bg-gray-50 transition"
+                >
+                  Search Hotels
+                </a>
               </div>
-
-              <ul style={{ listStyle: 'none', padding: 0, margin: '24px 0 0' }}>
-                {["Smart Search","Loyalty Insights","Price Drop Alerts","Baggage Fee Breakdown","Seat Maps & Availability"].map((t, i) => (
-                  <li key={i} style={{ marginTop: i === 0 ? 0 : 10 }}>
-                    <Link className="" href="#">{t}</Link>
-                  </li>
-                ))}
-              </ul>
-
-              <section style={{ marginTop: 24 }}>
-                <h2>Popular Destinations</h2>
-                <ul style={{ listStyle: 'none', padding: 0, margin: '12px 0' }}>
-                  {["Tokyo","Oslo","Berlin"].map((c, i) => (
-                    <li key={i} style={{ marginTop: i === 0 ? 0 : 8 }}>
-                      <Link href="/search/flights">{c}</Link>
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/search/flights">More</Link>
-              </section>
             </div>
-
-            <aside className="card" aria-labelledby="right-title" style={{ paddingBottom: 8 }}>
-              <div className="card-header">
-                <h2 id="right-title" style={{ fontSize: 18, fontWeight: 600, margin: 0 }}>Real-time flight prices</h2>
-                <span className="badge">Live</span>
-              </div>
-              <div style={{ padding: 12 }}>
-                {[
-                  { route: "SFO → JFK", price: 248, save: "Save 15%" },
-                  { route: "LAX → LHR", price: 498, save: "Save 8%" },
-                  { route: "BOS → CDG", price: 372, save: "Save 12%" },
-                  { route: "SEA → HND", price: 689, save: "Save 6%" },
-                  { route: "JFK → BCN", price: 421, save: "Save 10%" },
-                ].map((r, i) => (
-                  <div key={i} style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 0.8fr', columnGap: 16, padding: '6px 0', alignItems: 'baseline' }}>
-                    <div>{r.route}</div>
-                    <div style={{ fontWeight: 600 }}>${r.price}</div>
-                    <div style={{ textAlign: 'right', color: 'var(--text-secondary)' }}>{r.save}</div>
-                  </div>
-                ))}
-              </div>
-            </aside>
+            <div className="flex-1">
+              {/* Sample static asset path. Ensure public/assets contains referenced images. */}
+              <img
+                src="/assets/hero-travel.png"
+                alt="Travel illustration"
+                className="w-full h-auto rounded-xl border border-gray-100 shadow"
+              />
+            </div>
           </div>
-
-          <section>
-            <div className="grid" style={{ gridTemplateColumns: 'repeat(3, minmax(0,1fr))' }}>
-              <div className="card">
-                <div className="card-header"><div className="font-semibold">🔍 Smart Search</div></div>
-                <div style={{ padding: 12 }}>Natural language search for destinations, dates, and preferences.</div>
-              </div>
-              <div className="card">
-                <div className="card-header"><div className="font-semibold">🤖 AI Copilot</div></div>
-                <div style={{ padding: 12 }}>Ask questions, compare options, and book—all in chat.</div>
-              </div>
-              <div className="card">
-                <div className="card-header"><div className="font-semibold">💳 Secure Payments</div></div>
-                <div style={{ padding: 12 }}>Stripe-powered checkout with fraud protection and receipts.</div>
-              </div>
-            </div>
-          </section>
         </div>
-      </header>
-    </div>
+      </section>
+    </main>
   );
 }

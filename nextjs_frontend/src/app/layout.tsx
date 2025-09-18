@@ -1,31 +1,31 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import NotificationBanner from "../components/NotificationBanner";
-import ChatbotWidget from "../components/ChatbotWidget";
 
+/**
+ * PUBLIC_INTERFACE
+ * Root layout for the Next.js App Router.
+ * Purpose: Provides the HTML scaffold and global styling for all pages.
+ * Params: children - React.ReactNode content for the current route.
+ * Returns: HTML document structure wrapping the route component tree.
+ */
 export const metadata: Metadata = {
-  title: "TravelSmart — Book hotels & flights with AI",
-  description: "AI-powered travel booking platform with dynamic pricing and modern UX.",
-  applicationName: "TravelSmart",
-  icons: { icon: "/favicon.ico" },
+  title: "TravelSmart",
+  description: "AI-powered booking platform",
 };
 
+/**
+ * PUBLIC_INTERFACE
+ * RootLayout provides the minimal, valid HTML structure to ensure
+ * Next.js can inject its bootstrap scripts properly.
+ */
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning style={{ background: 'var(--bg-canvas)', color: 'var(--text-primary)' }}>
-        <Navbar />
-        <NotificationBanner />
-        <main>{children}</main>
-        <Footer />
-        <ChatbotWidget />
-      </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }

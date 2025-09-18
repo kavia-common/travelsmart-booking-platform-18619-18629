@@ -1,11 +1,11 @@
-/** @type {import('next').NextConfig} */
+ /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Add any needed Next.js options here. Preserving a minimal config for compatibility.
-  experimental: {
-    // Ensure App Router features are enabled if used.
-    typedRoutes: false,
+  images: {
+    // Keep unoptimized to avoid remote patterns/setup needs for now
+    unoptimized: true,
   },
+  // Keep config minimal; avoid experimental flags that can affect runtime bootstrap
 };
 
 export default nextConfig;
