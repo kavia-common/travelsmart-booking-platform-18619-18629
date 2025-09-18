@@ -5,6 +5,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, run the development server:
 
 ```bash
+# Default port is 3002 now to avoid conflicts with other services using 3000
 npm run dev
 # or
 yarn dev
@@ -14,11 +15,48 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3002 with your browser to see the result (or your chosen port).
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Ports and Conflicts
+
+- The app respects the `PORT` environment variable.
+- By default, it runs on port `3002` to avoid collisions with other dev services on `3000`.
+
+Override the port:
+```bash
+# Run on 3000 explicitly (if available)
+PORT=3000 npm run dev
+
+# Or pick any other free port
+PORT=3010 npm run dev
+```
+
+Identify what is using port 3000:
+```bash
+# macOS
+lsof -i :3000
+
+# Linux
+ss -lntp | grep :3000
+# or
+lsof -i :3000
+
+# Windows (PowerShell)
+netstat -ano | findstr :3000
+```
+
+Kill the offending process (use with care):
+```bash
+# macOS/Linux (replace <PID>)
+kill -9 <PID>
+
+# Windows (replace <PID>)
+taskkill /PID <PID> /F
+```
 
 ## Learn More
 
