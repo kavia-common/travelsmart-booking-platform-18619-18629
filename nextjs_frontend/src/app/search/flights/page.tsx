@@ -1,4 +1,4 @@
-import FlightSearch from '@/src/components/search/FlightSearch';
+import FlightSearch from '../../../components/search/FlightSearch';
 
 export default function FlightsSearchPage() {
   return (

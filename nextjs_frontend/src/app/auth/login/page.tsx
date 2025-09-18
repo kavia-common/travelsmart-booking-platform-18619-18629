@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { login, loginWithGoogle } from '@/src/lib/auth';
+import { login, loginWithGoogle } from '../../../lib/auth';
 import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {

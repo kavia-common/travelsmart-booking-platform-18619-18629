@@ -18,14 +18,12 @@ export default function PricingPage() {
   async function compute() {
     setLoading(true);
     try {
-      // Placeholder: replace with backend dynamic pricing service.
       const res = await apiFetch<{ price: number }>(`/pricing/recommend`, {
         method: 'POST',
         body: JSON.stringify({ context, id, base, demand, competitor }),
       });
       setRecommended(res.price);
     } catch {
-      // simple local heuristic fallback
       const demandAdj = base * demand;
       const compAdj = (competitor - base) * 0.5;
       setRecommended(Math.max(60, Math.round(base + demandAdj + compAdj)));

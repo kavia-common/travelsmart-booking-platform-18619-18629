@@ -1,11 +1,13 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { apiFetch } from '@/src/lib/api';
+import { apiFetch } from '../lib/api';
 
 type Message = { role: 'user' | 'assistant' | 'system'; content: string };
 
+// PUBLIC_INTERFACE
 export default function ChatbotWidget() {
+  /** Floating visual chat widget with Ocean Professional styling, frontend-safe fallbacks. */
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     { role: 'assistant', content: 'Hi! I can help you find hotels and flights. Ask me anything.' },

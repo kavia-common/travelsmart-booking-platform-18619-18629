@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { getHealth } from '@/src/lib/api';
+import { getHealth } from '../../lib/api';
 
 export default function HealthPage() {
   const [status, setStatus] = useState<string>('Checking...');

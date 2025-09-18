@@ -1,4 +1,4 @@
-import HotelSearch from '@/src/components/search/HotelSearch';
+import HotelSearch from '../../../components/search/HotelSearch';
 
 export default function HotelsSearchPage() {
   return (

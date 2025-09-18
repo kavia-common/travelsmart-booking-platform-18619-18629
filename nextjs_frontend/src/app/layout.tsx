@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/src/components/Navbar";
-import Footer from "@/src/components/Footer";
-import NotificationBanner from "@/src/components/NotificationBanner";
-import ChatbotWidget from "@/src/components/ChatbotWidget";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import NotificationBanner from "../components/NotificationBanner";
+import ChatbotWidget from "../components/ChatbotWidget";
 
 export const metadata: Metadata = {
   title: "TravelSmart — Book hotels & flights with AI",
