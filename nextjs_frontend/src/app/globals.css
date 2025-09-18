@@ -1,50 +1,12 @@
- /* Tailwind layers must be loaded first */
 @tailwind base;
 @tailwind components;
-
-/* Theme variables should come before utilities so utility classes can use them */
-@import "../styles/theme.css";
-
 @tailwind utilities;
 
-/* Base reset and typography */
+/* Minimal base reset to avoid style interference while confirming Tailwind */
 * { box-sizing: border-box; }
 
 html, body {
   min-height: 100%;
-  background: var(--bg-canvas, var(--color-background));
-  color: var(--text-primary, var(--color-text));
-  font-family: "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Links and focus states */
-a {
-  color: var(--accent, var(--color-primary-600));
-  text-decoration: none;
-}
-a:hover {
-  color: var(--link-hover, var(--color-primary-700));
-  text-decoration: underline;
-}
-:focus-visible {
-  outline: 2px solid var(--accent, #5B6BFF);
-  outline-offset: 2px;
-}
-
-/* Layout helpers */
-main { padding-bottom: 2rem; }
-
-/* Simple helpers reflecting the style guide */
-.kicker {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  color: var(--text-secondary, #6b7280);
-}
-.lead {
-  color: var(--text-secondary, #555555);
-  font-size: 18px;
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }

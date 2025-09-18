@@ -10,20 +10,8 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        primary: "#2563EB",
-        secondary: "#F59E0B",
-        success: "#12B886",
-        error: "#EF4444",
-        background: "#f9fafb",
-        surface: "#ffffff",
-        text: "#111827",
-      },
       boxShadow: {
         soft: "0 8px 24px rgba(0,0,0,0.06)",
-      },
-      borderRadius: {
-        xl: "0.75rem",
       },
     },
   },
