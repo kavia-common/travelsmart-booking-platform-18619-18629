@@ -2,7 +2,7 @@
 
 import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
-import { apiFetch } from '@/src/lib/api';
+import { apiFetch } from '@/lib/api';
 
 export default function PricingPage() {
   const params = useSearchParams();

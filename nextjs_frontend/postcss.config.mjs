@@ -1,16 +1,12 @@
 /**
- * PostCSS configuration for Next.js + Tailwind.
- * Uses tailwindcss and autoprefixer by default.
- * Includes postcss-preset-env for CSS features polyfills.
- * If the environment requires @tailwindcss/postcss plugin (e.g., older Next.js setups),
- * it can be optionally included by setting USE_TAILWINDCSS_POSTCSS=1 in env.
+ * PostCSS configuration for Next.js 14+ with Tailwind CSS v4.
+ * Uses the official '@tailwindcss/postcss' plugin as recommended.
+ * Autoprefixer is included for vendor prefixing, and postcss-preset-env
+ * is kept to enable modern CSS features with sensible polyfills.
  */
-const useTailwindcssPostcss = process.env.USE_TAILWINDCSS_POSTCSS === "1";
-
 const config = {
   plugins: [
-    // Prefer standard plugin names
-    "tailwindcss",
+    "@tailwindcss/postcss",
     "autoprefixer",
     [
       "postcss-preset-env",
@@ -21,8 +17,6 @@ const config = {
         },
       },
     ],
-    // Optionally include @tailwindcss/postcss to satisfy environments checking for it.
-    ...(useTailwindcssPostcss ? ["@tailwindcss/postcss"] : []),
   ],
 };
 
