@@ -1,9 +1,11 @@
+/* Tailwind layers must be loaded first */
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
-/* Ocean Professional theme variables and helpers */
+/* Theme variables should come before utilities so utility classes can use them */
 @import '../styles/theme.css';
+
+@tailwind utilities;
 
 * { box-sizing: border-box; }
 
