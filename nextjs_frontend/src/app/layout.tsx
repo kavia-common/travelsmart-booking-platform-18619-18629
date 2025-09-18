@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>
+      <body suppressHydrationWarning style={{ background: 'var(--bg-canvas)', color: 'var(--text-primary)' }}>
         <Navbar />
         <NotificationBanner />
         <main>{children}</main>
